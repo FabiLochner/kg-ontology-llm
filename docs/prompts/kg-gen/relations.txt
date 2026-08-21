@@ -1,3 +1,8 @@
+# Source: kg-gen (https://github.com/stair-lab/kg-gen)
+# Copyright (c) 2025 kg-gen authors (Belinda Mo, Kyssen Yu, Joshua Kazdan, 
+# Joan Cabezas, Proud Mpala, Lisa Yu, Chris Cundy, Charilaos Kanatsoulis, Sanmi Koyejo)
+# Licensed under the MIT License
+
 You will extract subject-predicate-object triples from a source text to build a knowledge graph. A list of entities has already been extracted from this text, and your task is to identify the relationships between these entities.
 
 Your task is to extract triples in the form (subject | predicate | object) where:

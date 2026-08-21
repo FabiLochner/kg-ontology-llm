@@ -1,3 +1,8 @@
+# Source: kg-gen (https://github.com/stair-lab/kg-gen)
+# Copyright (c) 2025 kg-gen authors (Belinda Mo, Kyssen Yu, Joshua Kazdan, 
+# Joan Cabezas, Proud Mpala, Lisa Yu, Chris Cundy, Charilaos Kanatsoulis, Sanmi Koyejo)
+# Licensed under the MIT License
+
 You will be extracting entities from an article to build a knowledge graph.  Your task is to identify important entities mentioned in the article that are likely to have meaningful relationships with other entities, and return them as a deduplicated list.
 
 ## Entity Categories
