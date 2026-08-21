@@ -1,0 +1,5 @@
+Ein Altenheim ist eine Einrichtung, in der verschiedene Akteure miteinander interagieren. Zu den Akteuren gehören allgemein Bewohner, Mitarbeitende und Besucher. Die Bewohner leben dauerhaft im Altenheim, während Mitarbeitende dort verschiedene Aufgaben übernehmen. Besucher halten sich nur zeitweise im Altenheim auf.
+
+Das Altenheim besteht aus verschiedenen Räumen. Diese können allgemein in private Räume und gemeinschaftlich genutzte Räume unterteilt werden. Bewohnerzimmer sind private Räume. Flure, Aufenthaltsräume oder Speiseräume sind gemeinschaftlich genutzte Räume und verbinden beziehungsweise ergänzen die einzelnen Bewohnerbereiche.
+
+Die Akteure können sich in unterschiedlichen Räumen aufhalten und dort miteinander interagieren. Ein Bewohner kann sich beispielsweise in seinem Zimmer oder in einem Gemeinschaftsraum befinden. Mitarbeitende können Bewohner in deren Zimmern besuchen oder ihnen in gemeinschaftlich genutzten Räumen begegnen. Besucher können einen Bewohner beispielsweise in dessen Zimmer oder in einem Aufenthaltsraum treffen.
