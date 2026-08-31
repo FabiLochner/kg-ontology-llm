@@ -1,0 +1,49 @@
+{
+  "entities": [
+    "Akteur",
+    "Altenheim",
+    "Aufenthaltsraum",
+    "Besucher",
+    "Bewohner",
+    "Bewohnerzimmer",
+    "Einrichtung",
+    "Flur",
+    "Gemeinschaftsraum",
+    "Mitarbeitender",
+    "Privatraum",
+    "Raum",
+    "Speiseraum"
+  ],
+  "edges": [
+    "begegnet",
+    "bestehtAus",
+    "besucht",
+    "hältSichAufIn",
+    "interagiertMit",
+    "istEin",
+    "lebtIn"
+  ],
+  "relations": [
+    ["Akteur", "begegnet", "Akteur"],
+    ["Akteur", "hältSichAufIn", "Raum"],
+    ["Akteur", "interagiertMit", "Akteur"],
+    ["Altenheim", "bestehtAus", "Raum"],
+    ["Altenheim", "istEin", "Einrichtung"],
+    ["Aufenthaltsraum", "istEin", "Gemeinschaftsraum"],
+    ["Besucher", "besucht", "Bewohner"],
+    ["Besucher", "istEin", "Akteur"],
+    ["Bewohner", "istEin", "Akteur"],
+    ["Bewohner", "lebtIn", "Altenheim"],
+    ["Bewohnerzimmer", "istEin", "Privatraum"],
+    ["Flur", "istEin", "Gemeinschaftsraum"],
+    ["Gemeinschaftsraum", "istEin", "Raum"],
+    ["Mitarbeitender", "besucht", "Bewohner"],
+    ["Mitarbeitender", "istEin", "Akteur"],
+    ["Privatraum", "istEin", "Raum"],
+    ["Speiseraum", "istEin", "Gemeinschaftsraum"]
+  ],
+  "interpretation_notes": [
+    "'begegnet' and 'interagiertMit' are drawn as self-loops on the 'Akteur' box and were encoded as reflexive relations (Akteur -> Akteur). Please confirm this matches intent.",
+    "'istEin -> Akteur' is drawn once on a shared trunk line branching to Bewohner, Mitarbeitender, and Besucher (same pattern as the room-type hierarchy). All three were assumed to inherit the relation. Please confirm this applies to all three, not just Mitarbeitender."
+  ]
+}

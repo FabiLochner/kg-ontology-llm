@@ -1,0 +1,213 @@
+{
+  "entities": [
+    "Akteure",
+    "Altenheim",
+    "Aufenthaltsräume",
+    "Aufgaben",
+    "Besucher",
+    "Bewohner",
+    "Bewohnerbereiche",
+    "Bewohnerzimmer",
+    "Einrichtung",
+    "Flure",
+    "Gemeinschaftsräume",
+    "Interaktionen",
+    "Mitarbeitende",
+    "Räume",
+    "Speiseräume",
+    "Zimmer",
+    "private Räume"
+  ],
+  "edges": [
+    "beherbergt",
+    "besteht aus",
+    "besuchen",
+    "ergänzen",
+    "halten sich auf in",
+    "halten sich zeitweise auf in",
+    "interagieren in",
+    "ist eine",
+    "leben dauerhaft in",
+    "sind",
+    "treffen",
+    "treffen Bewohner in",
+    "umfassen",
+    "verbinden",
+    "werden unterteilt in",
+    "übernehmen"
+  ],
+  "relations": [
+    [
+      "Akteure",
+      "halten sich auf in",
+      "Räume"
+    ],
+    [
+      "Akteure",
+      "interagieren in",
+      "Räume"
+    ],
+    [
+      "Akteure",
+      "umfassen",
+      "Besucher"
+    ],
+    [
+      "Akteure",
+      "umfassen",
+      "Bewohner"
+    ],
+    [
+      "Akteure",
+      "umfassen",
+      "Mitarbeitende"
+    ],
+    [
+      "Altenheim",
+      "beherbergt",
+      "Akteure"
+    ],
+    [
+      "Altenheim",
+      "besteht aus",
+      "Räume"
+    ],
+    [
+      "Altenheim",
+      "ist eine",
+      "Einrichtung"
+    ],
+    [
+      "Aufenthaltsräume",
+      "sind",
+      "Gemeinschaftsräume"
+    ],
+    [
+      "Besucher",
+      "halten sich zeitweise auf in",
+      "Altenheim"
+    ],
+    [
+      "Besucher",
+      "treffen",
+      "Bewohner"
+    ],
+    [
+      "Besucher",
+      "treffen Bewohner in",
+      "Aufenthaltsräume"
+    ],
+    [
+      "Besucher",
+      "treffen Bewohner in",
+      "Zimmer"
+    ],
+    [
+      "Bewohner",
+      "halten sich auf in",
+      "Gemeinschaftsräume"
+    ],
+    [
+      "Bewohner",
+      "halten sich auf in",
+      "Zimmer"
+    ],
+    [
+      "Bewohner",
+      "leben dauerhaft in",
+      "Altenheim"
+    ],
+    [
+      "Bewohnerzimmer",
+      "sind",
+      "private Räume"
+    ],
+    [
+      "Flure",
+      "sind",
+      "Gemeinschaftsräume"
+    ],
+    [
+      "Gemeinschaftsräume",
+      "ergänzen",
+      "Bewohnerbereiche"
+    ],
+    [
+      "Gemeinschaftsräume",
+      "verbinden",
+      "Bewohnerbereiche"
+    ],
+    [
+      "Mitarbeitende",
+      "besuchen",
+      "Bewohnerzimmer"
+    ],
+    [
+      "Mitarbeitende",
+      "halten sich auf in",
+      "Altenheim"
+    ],
+    [
+      "Mitarbeitende",
+      "treffen",
+      "Bewohner"
+    ],
+    [
+      "Mitarbeitende",
+      "übernehmen",
+      "Aufgaben"
+    ],
+    [
+      "Räume",
+      "werden unterteilt in",
+      "Gemeinschaftsräume"
+    ],
+    [
+      "Räume",
+      "werden unterteilt in",
+      "private Räume"
+    ],
+    [
+      "Speiseräume",
+      "sind",
+      "Gemeinschaftsräume"
+    ]
+  ],
+  "entity_clusters": [
+    "Akteure",
+    "Altenheim",
+    "Aufenthaltsräume",
+    "Aufgaben",
+    "Besucher",
+    "Bewohner",
+    "Bewohnerbereiche",
+    "Bewohnerzimmer",
+    "Einrichtung",
+    "Flure",
+    "Gemeinschaftsräume",
+    "Interaktionen",
+    "Mitarbeitende",
+    "Räume",
+    "Speiseräume",
+    "Zimmer",
+    "private Räume"
+  ],
+  "edge_clusters": [
+    "beherbergt",
+    "besteht aus",
+    "besuchen",
+    "ergänzen",
+    "halten sich auf in",
+    "halten sich zeitweise auf in",
+    "interagieren in",
+    "ist eine",
+    "leben dauerhaft in",
+    "sind",
+    "treffen",
+    "treffen Bewohner in",
+    "umfassen",
+    "verbinden",
+    "werden unterteilt in",
+    "übernehmen"
+  ]
+}

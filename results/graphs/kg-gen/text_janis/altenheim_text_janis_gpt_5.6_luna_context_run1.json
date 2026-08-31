@@ -1,0 +1,179 @@
+{
+  "entities": [
+    "Akteure",
+    "Altenheim",
+    "Aufenthaltsräume",
+    "Aufgaben",
+    "Besucher",
+    "Bewohner",
+    "Bewohnerbereiche",
+    "Bewohnerzimmer",
+    "Bewohnerzimmer der Bewohner",
+    "Einrichtung",
+    "Flure",
+    "Gemeinschaftsräume",
+    "Interaktionen",
+    "Mitarbeitende",
+    "Räume",
+    "Speiseräume",
+    "Zimmer",
+    "gemeinschaftlich genutzte Räume",
+    "private Räume"
+  ],
+  "edges": [
+    "begegnen",
+    "beherbergt",
+    "besteht aus",
+    "besuchen",
+    "ergänzen",
+    "halten sich auf in",
+    "halten sich zeitweise auf in",
+    "interagieren in",
+    "ist eine",
+    "leben dauerhaft in",
+    "sind",
+    "treffen",
+    "treffen Bewohner in",
+    "umfassen",
+    "verbinden",
+    "werden unterteilt in",
+    "übernehmen"
+  ],
+  "relations": [
+    [
+      "Akteure",
+      "halten sich auf in",
+      "Räume"
+    ],
+    [
+      "Akteure",
+      "interagieren in",
+      "Räume"
+    ],
+    [
+      "Akteure",
+      "umfassen",
+      "Besucher"
+    ],
+    [
+      "Akteure",
+      "umfassen",
+      "Bewohner"
+    ],
+    [
+      "Akteure",
+      "umfassen",
+      "Mitarbeitende"
+    ],
+    [
+      "Altenheim",
+      "beherbergt",
+      "Akteure"
+    ],
+    [
+      "Altenheim",
+      "besteht aus",
+      "Räume"
+    ],
+    [
+      "Altenheim",
+      "ist eine",
+      "Einrichtung"
+    ],
+    [
+      "Aufenthaltsräume",
+      "sind",
+      "gemeinschaftlich genutzte Räume"
+    ],
+    [
+      "Besucher",
+      "halten sich zeitweise auf in",
+      "Altenheim"
+    ],
+    [
+      "Besucher",
+      "treffen",
+      "Bewohner"
+    ],
+    [
+      "Besucher",
+      "treffen Bewohner in",
+      "Aufenthaltsräume"
+    ],
+    [
+      "Besucher",
+      "treffen Bewohner in",
+      "Zimmer"
+    ],
+    [
+      "Bewohner",
+      "halten sich auf in",
+      "Gemeinschaftsräume"
+    ],
+    [
+      "Bewohner",
+      "halten sich auf in",
+      "Zimmer"
+    ],
+    [
+      "Bewohner",
+      "leben dauerhaft in",
+      "Altenheim"
+    ],
+    [
+      "Bewohnerzimmer",
+      "sind",
+      "private Räume"
+    ],
+    [
+      "Flure",
+      "sind",
+      "gemeinschaftlich genutzte Räume"
+    ],
+    [
+      "Mitarbeitende",
+      "begegnen",
+      "Bewohner"
+    ],
+    [
+      "Mitarbeitende",
+      "besuchen",
+      "Bewohnerzimmer der Bewohner"
+    ],
+    [
+      "Mitarbeitende",
+      "halten sich auf in",
+      "Altenheim"
+    ],
+    [
+      "Mitarbeitende",
+      "übernehmen",
+      "Aufgaben"
+    ],
+    [
+      "Räume",
+      "werden unterteilt in",
+      "gemeinschaftlich genutzte Räume"
+    ],
+    [
+      "Räume",
+      "werden unterteilt in",
+      "private Räume"
+    ],
+    [
+      "Speiseräume",
+      "sind",
+      "gemeinschaftlich genutzte Räume"
+    ],
+    [
+      "gemeinschaftlich genutzte Räume",
+      "ergänzen",
+      "Bewohnerbereiche"
+    ],
+    [
+      "gemeinschaftlich genutzte Räume",
+      "verbinden",
+      "Bewohnerbereiche"
+    ]
+  ]
+}
