@@ -1,3 +1,47 @@
+"""
+collect_yt_transcripts.py
+====================
+
+Fetches manually created YouTube transcripts for one or more videos and saves
+them as plain-text files. These transcripts are the raw input for the
+LLM-based knowledge graph (KG) generation.
+
+Pipeline per video:
+    1. Look for a manual transcript (preferred order: German -> English -> any other language).
+       Videos with only auto-generated transcripts are skipped, since transcript
+       quality is key for the KG.
+    2. Clean the transcript (strip newlines, join all segments into one text block).
+    3. Save it as <video_id>_<language_code>.txt in the output folder.
+    4. (TBD) Machine-translate non-English transcripts into English and Norwegian via the DeepL API.
+
+Requirements:
+    - Python packages: youtube-transcript-api, deepl, python-dotenv
+    - A .env file containing:  deepl_api_key=<your DeepL API key>
+
+Usage:
+    python collect_yt_transcripts.py <video_id> [<video_id> ...] [--output-dir <folder>]
+
+Examples (usage from project root):
+
+    # single video
+    python3 collect_yt_transcripts.py lfDJDNRh5Iw
+
+    # multiple videos (space- or comma-separated)
+    python3 scripts/collect_yt_transcripts.py lfDJDNRh5Iw pJG3BR6ElqY P--RJFrLTnw
+    python3 scripts/collect_yt_transcripts.py lfDJDNRh5Iw,pJG3BR6ElqY
+
+    # custom output folder (default: <project root>/data/raw/transcripts)
+    python3 scripts/collect_yt_transcripts.py lfDJDNRh5Iw --output-dir data/raw/test
+
+    # video ids starting with "-" must come after "--"
+    python3 scripts/collect_yt_transcripts.py -- -abc123XYZ0 lfDJDNRh5Iw
+
+    # show help
+    python3 scripts/collect_yt_transcripts.py -h
+"""
+
+
+
 ## 1) Import libraries
 from youtube_transcript_api import YouTubeTranscriptApi
 from youtube_transcript_api._errors import NoTranscriptFound
@@ -5,6 +49,7 @@ import deepl
 import os
 from dotenv import load_dotenv
 from pathlib import Path
+import argparse
 
 ## 2) Load environment variables
 load_dotenv()
@@ -122,11 +167,47 @@ def process_videos(relevant_video_ids, output_dir):
         ### TBD: add translation block
 
 
+## 8) Command-line interface
+ 
+def parse_args():
+    """
+    Reads the video ids (and optionally the output directory) from the command line.
+ 
+    Example:
+        python collect_yt_transcripts.py lfDJDNRh5Iw pJG3BR6ElqY P--RJFrLTnw
+        python collect_yt_transcripts.py lfDJDNRh5Iw,pJG3BR6ElqY --output-dir data/raw/transcripts
+    """
+    parser = argparse.ArgumentParser(
+        description="Fetch manual YouTube transcripts for one or more video ids."
+    )
+    parser.add_argument(
+        "video_ids",
+        nargs="+",  # one or more ids
+        help="One or more YouTube video ids, separated by spaces (or commas).",
+    )
+    parser.add_argument(
+        "--output-dir",
+        default=str(PROJECT_ROOT / "data" / "raw" / "transcripts"),
+        help="Folder to save the transcripts to (default: <project root>/data/raw/transcripts).",
+    )
+    args = parser.parse_args()
+ 
+    # Allow comma-separated input as well (e.g. "id1,id2 id3"), drop empties and duplicates
+    video_ids = []
+    for arg in args.video_ids:
+        for vid in arg.split(","):
+            vid = vid.strip()
+            if vid and vid not in video_ids:
+                video_ids.append(vid)
+ 
+    return video_ids, args.output_dir
+
+
+
 ## MAIN block
 
 if __name__ == "__main__":
- 
-    relevant_video_ids = ["lfDJDNRh5Iw", "pJG3BR6ElqY", "P--RJFrLTnw"] #collected through manual data scouting
-    output_dir = PROJECT_ROOT/"data"/"raw"/"transcripts"
-    process_videos(relevant_video_ids, str(output_dir))
+    relevant_video_ids, output_dir = parse_args()
+    process_videos(relevant_video_ids, output_dir)
+
 
